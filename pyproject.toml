@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psycopg2_loio"
+version = "1.0"
+description = "Wrap psycopg2 lobjects as Python IO"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+authors = [
+    { name = "James Howe" }
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+    "Topic :: Database :: Front-Ends",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+    "psycopg2 >=2.0.8"
+]
+
+[project.urls]
+Homepage = "https://github.com/OrangeDog/psycopg2_loio"
+Issues = "https://github.com/OrangeDog/psycopg2_loio/issues"
+
+[dependency-groups]
+style = ["flake8", "flake8-docstrings", "flake8-pyproject", "pydocstyle"]
+publish = ["build", "twine"]
+
+[tool.flake8]
+format = "pylint"
+ignore = [
+    "D102",  # Missing docstring in public method
+    "D107",  # Missing docstring in __init__
+]
